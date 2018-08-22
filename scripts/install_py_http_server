@@ -1,0 +1,11 @@
+#!/bin/bash
+
+sudo yum -y update
+sudo yum -y install git
+sudo useradd jenkins
+git clone https://github.com/Bltt/python-systemd-http-server.git /tmp/python-systemd-http-server
+cd /tmp/python-systemd-http-server
+sudo make install
+sudo systemctl start python-systemd-http-server
+sudo systemctl enable python-systemd-http-server
+
