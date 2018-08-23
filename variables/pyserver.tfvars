@@ -6,9 +6,12 @@ packages = [
 	"vim"
 ]
 tags = [
-    "pyserver"
-]
+	"pyserver-firewall"
+	]
 scripts = [
-    "scripts/setup_vim",
     "scripts/install_py_http_server"
     ]
+allowed_port = [
+	"9000"
+	]
+

@@ -17,6 +17,12 @@ variable "network" {
     default = "default"
 }
 
+variable "allowed_port" {
+    default = [
+    	"9000"
+	]
+}
+
 variable "zone" {
     type = "string"
     default = "europe-west2-c"
@@ -24,7 +30,7 @@ variable "zone" {
 
 variable "tags" {
     default = [
-	"default_tag"
+	"defaulttag"
     ]
 }
 
@@ -62,4 +68,5 @@ variable "install_packages" {
 	"yum" = "sudo yum install -y"
     }
 }
+
 
