@@ -1,14 +1,15 @@
-name = "pyserver"
+name = "jenkins"
 packages = [ 
 	"wget",
 	"git",
 	"unzip",
-	"vim"
+	"vim",
+	"java"
 ]
 tags = [
-    "pyserver"
+    "jenkins"
 ]
 scripts = [
     "scripts/setup_vim",
-    "scripts/install_py_http_server"
+    "scripts/install_jenkins"
     ]

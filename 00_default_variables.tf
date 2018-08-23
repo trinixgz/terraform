@@ -41,7 +41,9 @@ variable "private_key" {
 }
 
 variable "scripts" {
-    default = []
+    default = [
+    	"scripts/setup_vim"
+	]
 }
 
 variable "packages" {
