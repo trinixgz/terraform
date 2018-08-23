@@ -2,6 +2,7 @@ resource "google_compute_instance" "default" {
     name = "${var.name}"
     machine_type = "${var.machine_type}"
     zone = "${var.zone}"
+    tags = "${var.tags}"
     boot_disk {
 	initialize_params {
 	    image = "${var.image}"
@@ -15,6 +16,17 @@ resource "google_compute_instance" "default" {
     }
     metadata {
 	sshKeys = "${var.ssh_user}:${file("${var.public_key}")}"
+    }
+     
+    provisioner "remote-exec" {
+	connection = {
+	    type = "ssh"
+	    user = "${var.ssh_user}"
+	    private_key = "${file("${var.private_key}")}"
+	}
+	inline = [
+	"${lookup(var.install_packages, var.package_manager)} ${join(" ", var.packages)}"
+	]
     }
     provisioner "remote-exec" {
 	connection = {

@@ -22,6 +22,12 @@ variable "zone" {
     default = "europe-west2-c"
 }
 
+variable "tags" {
+    default = [
+	"default_tag"
+    ]
+}
+
 variable "ssh_user" {
     default = "terraform"
 }
@@ -35,8 +41,23 @@ variable "private_key" {
 }
 
 variable "scripts" {
+    default = []
+}
+
+variable "packages" {
     default = [
-	"scripts/install_py_http_server",
-	"scripts/install_jenkins"
+	"wget",
+	"unzip"
 	]
 }
+
+variable "package_manager" {
+    default = "yum"
+}
+
+variable "install_packages" {
+    default = {
+	"yum" = "sudo yum install -y"
+    }
+}
+
