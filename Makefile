@@ -4,6 +4,8 @@ VAR_DIR = "variables"
 GIT_BRANCH = "master"
 COMMIT_MSG = "Latest work"
 
+init:
+	@terraform init
 
 pyserver:
 	@terraform apply -auto-approve -var-file=${VAR_DIR}/pyserver.tfvars
