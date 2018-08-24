@@ -19,7 +19,7 @@ variable "network" {
 
 variable "allowed_port" {
     default = [
-    	"9000"
+    	"9000", "8080"
 	]
 }
 

@@ -21,4 +21,4 @@ set ruler
   
 set undolevels=1000	
 set backspace=indent,eol,start
-    ' >> /home/marklightfoot96/.vimrc
+    ' >> /home/c93_theodoros/.vimrc
